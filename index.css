@@ -1,0 +1,109 @@
+  /*Event*/
+       .event {
+     width: 100%;
+     margin-right: 1%;
+     float: left;
+}
+ .event div {
+     padding:10px;
+     background-color: #3B5BA5;
+}
+ .event ul li {
+     margin-bottom: 20px;
+     width: 100%;
+     float: left;
+}
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff; /* Text color */
+            background-color: #121212; /* Dark background color */
+            overflow-x: hidden; /* Prevent horizontal scrollbars */
+        }
+
+        /* Header styles */
+        header {
+            background-color: #007bff; /* Blue header background */
+            color: #ffffff; /* Text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #343a40; /* Dark gray navigation background */
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #ffffff; /* Navigation link text color */
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #343a40; /* Dark gray footer background */
+            color: #ffffff; /* Text color */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        
+        /********* Header HTML CSS Starts **********/
+.header {
+	background: #46b7c1;
+	padding: 6px;
+}
+.header b {
+	background: #fff;
+	color: red;
+	padding:10px;
+	font-size: 20px;
+}
+.header marquee {
+	font-size:20px;
+	color: #ffffff;
+	width: 80%;
+}
+/********* Header HTML CSS End **********/
+
+
+
+
+/********** School Info, Award and Certificate CSS Starts **********/  
+.award p {
+  width: 100%;
+  float: left;
+  font-size: 16px;
+}
+.award img {
+  width: 100%;
+}
+.award b {
+  min-width: 115px;
+  float: left;
+  margin-bottom: 20px;
+}
+.award h3 {
+  font-size: 23px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/********** School Info, Award and Certificate CSS Ends **********/
+   
+   
+
+   
+   
+   

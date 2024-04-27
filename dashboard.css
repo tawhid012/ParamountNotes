@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.dashboard {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.dashboard-item {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.dashboard-item h3 {
+    margin-bottom: 10px;
+}
+
+.dashboard-item p {
+    font-size: 14px;
+}
+
+
+.post-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Adjust button size */
+    height: 60px; /* Adjust button size */
+    border-radius: 50%; /* Make button circular */
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    outline: none; /* Remove focus outline */
+}
+
+.post-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #666666;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <form id="contactForm" onsubmit="submitForm(event)">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" name="name" required>
+
+        <label for="emailInput">Email:</label>
+        <input type="email" id="emailInput" name="email" required>
+
+        <label for="addressInput">Address:</label>
+        <input type="text" id="addressInput" name="address" required>
+
+        <label for="contactInput">Contact No:</label>
+        <input type="text" id="contactInput" name="contact" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Retrieve form data and construct email body
+            const formData = new FormData(document.getElementById('contactForm'));
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const address = formData.get('address');
+            const contact = formData.get('contact');
+            const emailBody = `${name} wants to contact you.\n\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nContact No: ${contact}\n`;
+            // Send email (replace 'YOUR_EMAIL_ADDRESS' with your email address)
+            const recipientEmail = 'rahmanlaskartawhidur@gmail.com';
+            const subject = 'Contact Request';
+            const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            // Open mail client with pre-filled email
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>

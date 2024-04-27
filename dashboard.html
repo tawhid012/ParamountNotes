@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <h2>Teacher Dashboard</h2>
+
+    <div class="dashboard">
+        <div class="dashboard-item">
+            <h3>Attendance</h3>
+            <p>Manage student attendance records.</p>
+        </div>
+        <div class="dashboard-item">
+            <h3>Grades</h3>
+            <p>View and update student grades.</p>
+        </div>
+        <div class="dashboard-item">
+            <h3>Assignments</h3>
+            <p>Assign and review student assignments.</p>
+        </div>
+        <div class="dashboard-item">
+            <h3>Messages</h3>
+            <p>Communicate with students and parents.</p>
+        </div>
+    </div>
+    
+    <!-- Post button in circle shape at bottom-right corner -->
+    <button class="post-button" onclick="redirectToClassesPage()">Post</button>
+
+    <script>
+        // Function to redirect to classes.html when button is clicked
+        function redirectToClassesPage() {
+            window.location.href = 'classes.html';
+        }
+    </script>    <!-- Post button at bottom right corner -->
+    <button class="post-button" onclick="redirectToClassesPage()">+</button>
+
+    <script>
+        // Function to redirect to classes.html when button is clicked
+        function redirectToClassesPage() {
+            window.location.href = 'classes.html';
+        }
+    </script>
+  
+</body>
+</html>
