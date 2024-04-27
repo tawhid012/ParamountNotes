@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Notes</title>
+    <link rel="stylesheet" href="allclasses.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Post Notes</h1>
+    </header>
+
+    <main>
+        <!-- Form for posting notes -->
+        <form id="postForm" onsubmit="submitForm(event)">
+            <label for="teacherName">Name:</label>
+            <input type="text" id="teacherName" name="teacherName" required>
+
+            <label for="noteTitle">Title:</label>
+            <input type="text" id="noteTitle" name="noteTitle" required>
+
+            <label for="noteContent">Content:</label>
+            <textarea id="noteContent" name="noteContent" rows="5" required></textarea>
+
+            <label for="noteFile">Upload PDF:</label>
+            <input type="file" id="noteFile" name="noteFile" accept=".pdf" required>
+
+            <button type="submit">Post Note</button>
+        </form>
+
+        <!-- Container to display posted notes dynamically -->
+        <div id="postedNotes">
+            <!-- Posted notes will appear here dynamically -->
+        </div>
+    </main>
+
+    <!-- JavaScript code for form submission and dynamic note display -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Retrieve form inputs
+            const name = document.getElementById('teacherName').value;
+            const title = document.getElementById('noteTitle').value;
+            const content = document.getElementById('noteContent').value;
+            const fileInput = document.getElementById('noteFile');
+
+            // Check if a file is selected
+            if (fileInput.files.length === 0) {
+                alert('Please select a PDF file.');
+                return;
+            }
+
+            // Get the selected file
+            const file = fileInput.files[0];
+            const fileName = file.name;
+
+            // Create new note element with title, content, and file link
+            const noteElement = document.createElement('div');
+            noteElement.classList.add('note');
+            noteElement.innerHTML = `
+                <h2>${title}</h2>
+                <p>By: ${name}</p>
+                <p>${content}</p>
+                <a href="${URL.createObjectURL(file)}" target="_blank">${fileName}</a>
+            `;
+
+            // Append new note to postedNotes container
+            const postedNotesContainer = document.getElementById('postedNotes');
+            postedNotesContainer.appendChild(noteElement);
+
+            // Reset form
+            document.getElementById('postForm').reset();
+        }
+    </script>
+</body>
+</html>
