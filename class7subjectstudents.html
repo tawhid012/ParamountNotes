@@ -78,15 +78,9 @@
 </head>
 <body class="dark-theme">
   <div class="container">
-    <h2 align="center">Select your class by clicking the button below</h2>
-    <button onclick="showClassSelection()">Select Your Class</button>
+    <h2 align="center">Select your subject by clicking the button below</h2>
+    <button onclick="showClassSelection()">Select Your Subject</button>
     <dialog id="classDialog">
-      <label for="classSelect">Select Your Class:</label>
-      <select id="classSelect">
-        <option value="class7">Class 7</option>
-        <option value="class8">Class 8</option>
-        <option value="class9">Class 9</option>
-      </select>
       <label for="subjectSelect">Select Your Subject:</label>
       <select id="subjectSelect">
         <option value="science">Science</option>
@@ -96,12 +90,12 @@
         <option value="hindi">Hindi</option>
         <option value="computer">Computer</option>
       </select>
-      <button onclick="redirectToSelectedClass()">Go</button>
+      <button onclick="redirectToSelectedSubject()">Go</button>
     </dialog>
   </div>
 
   <script>
-    // Function to show the class selection dialog
+    // Function to show the subject selection dialog
     function showClassSelection() {
       const dialog = document.getElementById('classDialog');
       if (typeof dialog.showModal === "function") {
@@ -111,12 +105,11 @@
       }
     }
 
-    // Function to redirect to the selected class page
-    function redirectToSelectedClass() {
-      const selectedClass = document.getElementById('classSelect').value;
+    // Function to redirect to the selected subject page
+    function redirectToSelectedSubject() {
       const selectedSubject = document.getElementById('subjectSelect').value;
-      window.location.href = `${selectedClass}${selectedSubject}.html`;
+      window.location.href = selectedSubject + 'subjectstudents.html';
     }
   </script>
 </body>
-</html>
+  </html>
