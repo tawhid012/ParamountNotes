@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #FFFFFF;
+    }
+    button {
+      padding: 15px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #classDialog {
+      background-color: #333;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    label {
+      color: #fff;
+    }
+    select, button {
+      margin-top: 10px;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .dialog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: slideIn 0.3s ease forwards;
+    }
+    .dialog-content {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <div class="container">
+    <h2 align="center">Select your subject by clicking the button below</h2>
+    <button onclick="showClassSelection()">Select Your Subject</button>
+    <dialog id="classDialog">
+      <label for="subjectSelect">Select Your Subject:</label>
+      <select id="subjectSelect">
+        <option value="science">Science</option>
+        <option value="maths">Maths</option>
+        <option value="english">English</option>
+        <option value="bengali">Bengali</option>
+        <option value="hindi">Hindi</option>
+        <option value="computer">Computer</option>
+      </select>
+      <button onclick="redirectToSelectedSubject()">Go</button>
+    </dialog>
+  </div>
 
+  <script>
+    // Function to show the subject selection dialog
+    function showClassSelection() {
+      const dialog = document.getElementById('classDialog');
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        alert("The <dialog> API is not supported by this browser.");
+      }
+    }
+
+    // Function to redirect to the selected subject page
+    function redirectToSelectedSubject() {
+      const selectedSubject = document.getElementById('subjectSelect').value;
+      window.location.href = selectedSubject + 'subject8students.html';
+    }
+  </script>
+</body>
+</html>
